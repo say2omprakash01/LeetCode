@@ -15,4 +15,4 @@ public:
         }
         return i ; 
     }
-};
+}; //see aayusi sharma youtube , here we used two pointers i and j 
