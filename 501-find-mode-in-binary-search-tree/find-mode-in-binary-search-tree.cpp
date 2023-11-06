@@ -10,31 +10,46 @@
  * };
  */
 class Solution {
-public:
-    std::vector<int> findMode(TreeNode* root) {
-        in_order_traversal(root);
-        return modes;
-    }
 private:
-    int current_val = 0;
-    int current_count = 0;
-    int max_count = 0;
-    std::vector<int> modes;
+   vector<int> mode ; 
+   int max_count; 
+   int prev ; 
+   int count ; 
+public:
+    vector<int> findMode(TreeNode* root) {
+        if(root == NULL) return mode ; 
+        mode.clear() ; 
+        max_count = 0 ; 
+        prev = 1e9 ; 
+        count = 0 ; 
 
-    void in_order_traversal(TreeNode* node) {
-        if (!node) return;
-        
-        in_order_traversal(node->left);
-        
-        current_count = (node->val == current_val) ? current_count + 1 : 1;
-        if (current_count == max_count) {
-            modes.push_back(node->val);
-        } else if (current_count > max_count) {
-            max_count = current_count;
-            modes = { node->val };
+        inorder(root) ; 
+
+        return mode ; 
+    }
+
+    void inorder(TreeNode* root){
+        if(root == NULL) return ; 
+
+        inorder(root->left) ; 
+
+        if(prev==1e9){
+            prev = root->val ; 
+            count = 1 ; 
         }
-        current_val = node->val;
+        else if(prev==root->val) count++ ; 
+        else{
+            prev = root->val ; 
+            count = 1 ; 
+        }
 
-        in_order_traversal(node->right);
+        if(count>max_count){
+            max_count = count ; 
+            mode = {root->val} ; 
+        } 
+        else if(count == max_count) mode.push_back(root->val) ; 
+
+        inorder(root->right) ; 
+
     }
 };
