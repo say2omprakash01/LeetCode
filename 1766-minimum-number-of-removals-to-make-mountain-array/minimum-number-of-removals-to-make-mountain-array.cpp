@@ -25,8 +25,8 @@ public:
 
      int maxi = -1;
      for (int i = 0; i < n; i++) {
-         if(dp1[i] > 1 && dp2[i] > 1)
-        maxi = max(maxi, dp1[i] + dp2[i] - 1);
+        if(dp1[i] > 1 && dp2[i] > 1)
+         maxi = max(maxi, dp1[i] + dp2[i] - 1);
      }
      return n-maxi;
     }
