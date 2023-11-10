@@ -34,7 +34,7 @@ public:
         
         for(int prev_index = 0; prev_index <=i-1; prev_index ++){
             
-            if( compare(arr[i], arr[prev_index]) && 1 + dp[prev_index] > dp[i]){
+            if( compare(arr[i], arr[prev_index])&& 1 + dp[prev_index] > dp[i]){
                 dp[i] = 1 + dp[prev_index];
             }
         }
