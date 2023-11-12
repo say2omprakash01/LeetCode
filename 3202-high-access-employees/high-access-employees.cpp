@@ -2,8 +2,6 @@ class Solution {
 public:
     vector<string> findHighAccessEmployees(vector<vector<string>>& access_times) {
         unordered_map<string, vector<int>> mpp;
-
-        
         for (const auto& entry : access_times) {
             string employee = entry[0];
             int time = stoi(entry[1]);
@@ -12,7 +10,6 @@ public:
 
         vector<string> ans;
 
-        
         for (auto& pair : mpp) {
             sort(pair.second.begin(), pair.second.end());
             
@@ -28,6 +25,4 @@ public:
 
         return ans;
     }
-
-
 };
