@@ -1,30 +1,36 @@
+#include <vector>
+#include <stack>
+using namespace std;
+
 class Solution {
 public:
-   int maxHistogram(vector<int>& heights)
-    {
-        heights.push_back(0);
-        int n = heights.size();
-        stack<int> st;
-        int res = 0;
+    int maxHistogram(vector<int>& arr) {
+        int n = arr.size() ; 
+        stack<int> s ;
+        int res= 0  ;
+        int curr ; 
+        int tp ; 
         
-        int i = 0;
-        while(i < n)
-        {
-            if(st.empty() || heights[i] >= heights[st.top()])
-              st.push(i++);
-            else
-             {
-                 int top = st.top();
-                 st.pop();
-                 res = max(res, heights[top] * (st.empty() ? i : i - st.top() - 1));
-             }
+        for(int i = 0 ; i<n ; i++){
+            while(!s.empty() && arr[s.top()] >= arr[i]){
+                tp = s.top() ; 
+                s.pop() ;
+                curr = arr[tp]*(s.empty()?i:(i-s.top()-1)) ; 
+                res = max(curr , res) ; 
+            }
+            s.push(i) ;
         }
         
-        return res;
+        while(!s.empty()){
+                tp = s.top() ; 
+                s.pop() ;
+                curr = arr[tp]*(s.empty()?n:(n-s.top() -1)) ; 
+                res = max(curr , res) ; 
+        }
+        return res ; 
     }
-    
-    int maximalRectangle(vector<vector<char>>& matrix) 
-    {
+
+    int maximalRectangle(vector<vector<char>>& matrix) {
         if(matrix.empty())
             return 0;
         
@@ -48,6 +54,5 @@ public:
         }
         
         return res;
-        
     }
 };
