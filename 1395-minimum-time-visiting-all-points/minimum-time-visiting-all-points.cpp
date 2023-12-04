@@ -1,13 +1,13 @@
 class Solution {
 public:
-    int toTime(std::vector<int>& from, std::vector<int>& to) {
-        int xDiff = std::abs(from[0] - to[0]);
-        int yDiff = std::abs(from[1] - to[1]);
+    int toTime(vector<int>& from, vector<int>& to) {
+        int xDiff = abs(from[0] - to[0]);
+        int yDiff = abs(from[1] - to[1]);
         
         return std::max(xDiff, yDiff);
     }
 
-    int minTimeToVisitAllPoints(std::vector<std::vector<int>>& points) {
+    int minTimeToVisitAllPoints(vector<vector<int>>& points) {
         int time = 0;
 
         for (int i = 1; i < points.size(); i++) {
