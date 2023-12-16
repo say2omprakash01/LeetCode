@@ -8,7 +8,7 @@ public:
             mp[nums[i]]++ ; 
         }
         for(auto x : mp){
-            if(x.second>=2) ans.push_back(x.first) ; 
+            if(x.second==2) ans.push_back(x.first) ; 
         }
         return ans ; 
                   
