@@ -9,10 +9,9 @@ public:
     }
     int smallestDivisor(vector<int>& nums, int t) {
         int n = nums.size() ; 
-        int mini = INT_MAX , maxi = INT_MIN ; 
+        int maxi = INT_MIN ; 
         for(int i = 0 ; i<n ; i++){
-            maxi = max(maxi , nums[i]) ; 
-            mini = min(mini , nums[i]) ;  
+            maxi = max(maxi , nums[i]) ; ;  
         }
         int low = 1 , high = maxi ; 
         while(low<=high){
