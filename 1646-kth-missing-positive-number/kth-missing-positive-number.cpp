@@ -1,7 +1,7 @@
 class Solution {
 public:
     int findKthPositive(vector<int>& arr, int k) {
-        // for(auto a : arr) if(a <= k ) k++ ; 
+        // for(auto a : arr) if(a <= k ) k++ ;   // O(n)
         // return k ; 
 
         int n = arr.size() ; 
@@ -15,3 +15,4 @@ public:
         return low+k ; 
     }
 };
+// see striver lecture for doubts
