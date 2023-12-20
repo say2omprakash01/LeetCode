@@ -4,7 +4,7 @@ public:
         int n=m.size();
         for(int i=0;i<n;i++)
         {
-            set<int> s;
+            unordered_set<int> s;
             for(int j=0;j<n;j++)
             {
                 if(m[i][j]>n || m[i][j]<1)
@@ -16,7 +16,7 @@ public:
         }
         for(int i=0;i<n;i++)
         {
-            set<int> s;
+            unordered_set<int> s;
             for(int j=0;j<n;j++)
             {
                 if(m[j][i]>n || m[j][i]<1)
