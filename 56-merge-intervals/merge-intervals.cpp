@@ -8,8 +8,8 @@ public:
         while (i < n) {
             // Check if there's an overlap with the next interval
             while (i < n - 1 && in[i][1] >= in[i + 1][0]) {
-                in[i + 1][0] = min(in[i][0], in[i + 1][0]);
-                in[i + 1][1] = max(in[i][1], in[i + 1][1]);
+                // in[i + 1][0] = min(in[i][0], in[i + 1][0]);
+                 in[i + 1][1] = max(in[i][1], in[i + 1][1]);
                 i++;
             }
             // Add the merged interval to the result
