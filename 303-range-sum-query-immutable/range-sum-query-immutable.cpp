@@ -9,7 +9,7 @@ public:
     int sumRange(int i, int j) {
         return accu[j + 1] - accu[i];
     }
-private:
+//private:
     vector<int> accu;
 };
 
