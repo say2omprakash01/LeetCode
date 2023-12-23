@@ -4,7 +4,7 @@ public:
         int n = nums.size() ; 
         int flag = 0 ; 
         int ind = 0 ; 
-        for(int i = n ; i>=0 ; i--){
+        for(int i = n-1 ; i>=0 ; i--){
             if(nums[i] %2){
                 flag = 1 ; 
                 ind = i ; 
