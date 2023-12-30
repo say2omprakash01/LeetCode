@@ -6,13 +6,13 @@ public:
             return ; 
         }
 
-        if(c[i]<=t){
+        if(c[i]<=t){  // Pick the element
             v.push_back(c[i]) ; 
             help(i , t-c[i] , c , v , ans) ;
             v.pop_back() ;
         }
 
-        help(i+1 , t , c , v , ans) ; 
+        help(i+1 , t , c , v , ans) ;  // non Pick
     }
     vector<vector<int>> combinationSum(vector<int>& c, int target) {
         vector<vector<int>> ans ; 
