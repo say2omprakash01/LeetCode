@@ -2,14 +2,20 @@ class Solution {
 public:
     int sum = 0;
     int numberOfArithmeticSlices(vector<int>& A) {
-        vector<int> dp(A.size());
-        int sum = 0;
-        for (int i = 2; i < dp.size(); i++) {
-            if (A[i] - A[i - 1] == A[i - 1] - A[i - 2]) {
-                dp[i] = 1 + dp[i - 1];
-                sum += dp[i];
-            }
-        }
+
+        slices(A, A.size() - 1);
         return sum;
+    }
+
+    int slices(vector<int>& A, int i) {
+        if (i < 2)
+            return 0;
+        int ap = 0;
+        if (A[i] - A[i - 1] == A[i - 1] - A[i - 2]) {
+            ap = 1 + slices(A, i - 1);
+            sum += ap;
+        } else
+            slices(A, i - 1);
+        return ap;
     }
 };
